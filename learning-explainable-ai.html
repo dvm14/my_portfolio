@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explainable AI - Diya Mirji</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: #493548;
+            min-height: 100vh;
+            color: #CBEAA6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #A1E887;
+            text-decoration: none;
+            font-size: 16px;
+            margin-bottom: 40px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            transform: translateX(-5px);
+            color: #CBEAA6;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 600;
+            color: #A1E887;
+            margin-bottom: 50px;
+            line-height: 1.2;
+        }
+
+        .post-section {
+            margin-bottom: 60px;
+            padding-bottom: 60px;
+            border-bottom: 3px solid rgba(161, 232, 135, 0.3);
+        }
+
+        .post-section:last-child {
+            border-bottom: none;
+        }
+
+        .post-date {
+            font-size: 14px;
+            color: #80B192;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .post-title {
+            font-size: 32px;
+            font-weight: 600;
+            color: #A1E887;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .post-caption {
+            font-size: 18px;
+            font-style: italic;
+            color: #CBEAA6;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .post-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #6A8D92, #80B192);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            margin: 25px 0;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 25px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+        }
+
+        .post-description {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #CBEAA6;
+            margin-top: 20px;
+        }
+
+        .post-description p {
+            margin-bottom: 15px;
+        }
+
+        strong {
+            color: #A1E887;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            .post-title {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Portfolio</a>
+        
+        <h1>Explainable AI</h1>
+
+        <article class="post-section">
+            <div class="post-date">Coming Soon</div>
+            <h2 class="post-title">Deep Dive into LIME and Model Interpretability</h2>
+            
+            <div class="post-image">📊 Feature Importance Visualization</div>
+
+            <div class="post-description">
+                <p>Exploring Local Interpretable Model-agnostic Explanations (LIME) and how it complements SHAP for understanding complex machine learning models. This post will cover practical implementations and when to use different explainability techniques.</p>
+
+                <p>We'll examine real-world examples of how LIME can help debug models, identify biases, and communicate results to non-technical stakeholders. Understanding these tools is essential for building trustworthy AI systems that can be deployed in critical applications.</p>
+            </div>
+        </article>
+
+        <article class="post-section">
+            <div class="post-date">September 7, 2025</div>
+            <h2 class="post-title">Explaining Explainable AI</h2>
+            <div class="post-caption">Overview of "Expert-driven explainable artificial intelligence models can detect multiple climate hazards relevant for agriculture"</div>
+            
+            <div class="video-container">
+                <iframe src="https://duke.zoom.us/rec/play/H8ZNih_IkvZfl6doQ3rL4WDHlpHkp4CFKfXczSI63qPSRdfIcudaBn-1mBmfPY1lnkKZSWMbyuJZ8z73.MpEI4VV4mj31fFil" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+
+            <div class="post-description">
+                <p>This presentation explores how explainable artificial intelligence (XAI) techniques can be applied to climate hazard prediction for agriculture. The research demonstrates a novel expert-driven XAI model that probabilistically identifies diverse agriculture-related meteorological hazards across Europe.</p>
+
+                <p>The model leverages <strong>eXtreme Gradient Boosting Decision Trees (XGBoost)</strong> combined with expert knowledge to create Areas of Concern (AOC) maps that identify regions where climate hazards are likely to affect agriculture. What makes this approach particularly powerful is its emphasis on explainability and interpretability.</p>
+
+                <p><strong>Key XAI Technique: SHAP Analysis</strong></p>
+                <p>The research uses SHapley Additive exPlanations (SHAP) as the primary explainability method. SHAP measures the average magnitude of each feature's contribution to the model's predictions, providing an unbiased assessment based on marginal contributions. Positive SHAP values indicate an increased probability of detecting an AOC region, while negative values suggest the opposite.</p>
+
+                <p>This level of explainability allows stakeholders - from farmers to European policymakers - to understand not just what the model predicts, but why it makes those predictions. The transparency builds trust and enables more targeted, effective interventions.</p>
+
+                <p><strong>Why Explainability Matters</strong></p>
+                <p>In disaster risk management, understanding AI predictions is crucial. The model's three key strengths make it suitable for early hazard detection: explainability and interpretability, probabilistic results with uncertainty estimates, and integration of expert knowledge. The ensemble nature of the system increases trust by averaging out individual model errors.</p>
+
+                <p>The research shows that XAI isn't just about technical accuracy - it's about creating AI systems that diverse audiences can understand, trust, and act upon. This is especially critical when the decisions impact food security and agricultural planning.</p>
+            </div>
+        </article>
+    </div>
+</body>
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicting Weather Patterns - Diya Mirji</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: #F3F9D2;
+            min-height: 100vh;
+            color: #2d2d2d;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #3D0B37;
+            text-decoration: none;
+            font-size: 16px;
+            margin-bottom: 40px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            transform: translateX(-5px);
+            color: #63264A;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 600;
+            color: #3D0B37;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #4B4E6D;
+        }
+
+        .in-progress-badge {
+            background: linear-gradient(135deg, #80B192, #6A8D92);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .content-section {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid rgba(128, 177, 146, 0.3);
+        }
+
+        .content-section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 32px;
+            font-weight: 600;
+            color: #3D0B37;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #4B4E6D;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            line-height: 1.8;
+            color: #4B4E6D;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .tech-item {
+            background: linear-gradient(135deg, #80B192, #6A8D92);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .concept-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .concept-tag {
+            background: rgba(128, 177, 146, 0.2);
+            color: #3D0B37;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            border: 2px solid #80B192;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #6A8D92, #80B192);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            margin: 25px 0;
+        }
+
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #3D0B37;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            margin-right: 15px;
+        }
+
+        .github-link:hover {
+            background: #63264A;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(61, 11, 55, 0.3);
+        }
+
+        .github-link.disabled {
+            background: #999;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+
+        li {
+            line-height: 1.8;
+            color: #4B4E6D;
+            margin-bottom: 10px;
+        }
+
+        strong {
+            color: #3D0B37;
+        }
+
+        .highlight-box {
+            background: rgba(161, 232, 135, 0.2);
+            border-left: 4px solid #80B192;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Portfolio</a>
+        
+        <h1>Predicting Weather Patterns</h1>
+        
+        <div class="project-meta">
+            <div class="in-progress-badge">🚧 In Progress</div>
+            <div class="meta-item">📅 Fall 2025</div>
+            <div class="meta-item">🌡️ Time Series Forecasting</div>
+        </div>
+
+        <div class="content-section">
+            <h2>Key Concepts</h2>
+            <div class="concept-list">
+                <div class="concept-tag">Time Series Modeling</div>
+                <div class="concept-tag">Data Preprocessing</div>
+                <div class="concept-tag">Feature Engineering</div>
+                <div class="concept-tag">Seasonality Analysis</div>
+                <div class="concept-tag">Trend Analysis</div>
+                <div class="concept-tag">Residual Analysis</div>
+                <div class="concept-tag">Autocorrelation</div>
+                <div class="concept-tag">Temperature Forecasting</div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Overview</h2>
+            <p>This ongoing project focuses on using time series modeling to predict hourly temperature patterns in Raleigh, North Carolina for the period of September 17-30, 2025. The challenge involves leveraging historical temperature data to build accurate predictive models that can forecast short-term weather patterns.</p>
+            
+            <div class="image-placeholder">🌡️ Temperature Time Series Visualization</div>
+            
+            <p>Weather prediction is a complex problem that requires understanding temporal patterns, seasonal variations, and external factors that influence temperature changes. By applying time series analysis techniques, this project aims to create a model that can capture these patterns and make reliable hourly predictions.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>The Challenge</h2>
+            <p>The primary objective is to predict hourly temperatures in Raleigh from September 17-30, 2025 using any available historical temperature data. This presents several interesting challenges:</p>
+
+            <ul>
+                <li><strong>Hourly Granularity:</strong> Predicting temperature at an hourly level requires capturing fine-grained temporal patterns and daily cycles</li>
+                <li><strong>Data Selection:</strong> Determining what historical data is most relevant and how far back to look for meaningful patterns</li>
+                <li><strong>Feature Engineering:</strong> Creating features that capture temporal relationships, seasonal effects, and other factors that influence temperature</li>
+                <li><strong>Model Selection:</strong> Choosing appropriate time series models that can handle the complexity of weather data</li>
+            </ul>
+
+            <div class="image-placeholder">📊 Historical Temperature Patterns</div>
+        </div>
+
+        <div class="content-section">
+            <h2>Approach & Methodology</h2>
+            
+            <h3>Data Processing</h3>
+            <p>A significant portion of this project involves extensive data preprocessing to prepare historical temperature data for modeling. This includes:</p>
+            <ul>
+                <li>Cleaning and handling missing values in historical weather data</li>
+                <li>Normalizing temperature measurements across different time periods</li>
+                <li>Identifying and addressing anomalies or outliers in the data</li>
+                <li>Structuring the data appropriately for time series analysis</li>
+            </ul>
+
+            <h3>Feature Engineering</h3>
+            <p>Creating features of high importance is crucial for building an effective predictive model. The feature engineering process focuses on:</p>
+            <ul>
+                <li><strong>Temporal Features:</strong> Hour of day, day of week, day of year to capture cyclical patterns</li>
+                <li><strong>Lag Features:</strong> Previous hours' temperatures to capture short-term dependencies</li>
+                <li><strong>Rolling Statistics:</strong> Moving averages and other aggregations to smooth trends</li>
+                <li><strong>Seasonal Indicators:</strong> Features that encode seasonal patterns specific to Raleigh's climate</li>
+            </ul>
+
+            <div class="image-placeholder">🔧 Feature Engineering Pipeline</div>
+
+            <h3>Time Series Analysis</h3>
+            <p>The project involves comprehensive time series decomposition and analysis:</p>
+
+            <p><strong>Seasonality Analysis:</strong> Identifying recurring patterns in temperature data that correspond to daily cycles, weekly patterns, or longer-term seasonal variations. Understanding these patterns helps the model learn when temperatures typically rise and fall.</p>
+
+            <p><strong>Trend Analysis:</strong> Examining long-term trends in temperature data to understand if there are gradual increases or decreases over time, which could be related to climate patterns or seasonal transitions.</p>
+
+            <p><strong>Residual Analysis:</strong> After removing trend and seasonality, analyzing the residuals (random fluctuations) to ensure the model captures all systematic patterns and only random noise remains.</p>
+
+            <p><strong>Autocorrelation:</strong> Studying how temperature values correlate with themselves at different time lags to determine the optimal look-back period and identify important temporal dependencies.</p>
+
+            <div class="image-placeholder">📈 Seasonality, Trend, and Residual Decomposition</div>
+
+            <h3>Model Development</h3>
+            <p>Building and training time series models that can effectively capture the temporal patterns in temperature data and make accurate hourly predictions for the target period in September 2025.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Current Progress</h2>
+            <p>This project is currently in active development. Key areas of focus include:</p>
+
+            <div class="highlight-box">
+                <ul style="margin: 0;">
+                    <li>Collecting and preprocessing historical temperature data for Raleigh</li>
+                    <li>Exploring different data sources to identify the most relevant features</li>
+                    <li>Performing time series decomposition to understand seasonality and trends</li>
+                    <li>Engineering features that capture important temporal patterns</li>
+                    <li>Experimenting with various time series modeling approaches</li>
+                    <li>Evaluating model performance and iterating on feature selection</li>
+                </ul>
+            </div>
+
+            <p><em>More details will be added as the project progresses. Check back soon for updates on methodology, results, and key learnings!</em></p>
+        </div>
+
+        <div class="content-section">
+            <h2>Technologies & Tools</h2>
+            <div class="tech-grid">
+                <div class="tech-item">Python</div>
+                <div class="tech-item">Pandas</div>
+                <div class="tech-item">NumPy</div>
+                <div class="tech-item">Scikit-learn</div>
+                <div class="tech-item">Statsmodels</div>
+                <div class="tech-item">Matplotlib/Seaborn</div>
+            </div>
+            <p style="margin-top: 15px; font-style: italic; color: #63264A;">Note: Technology stack may expand as the project develops</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Links & Resources</h2>
+            <a href="#" class="github-link disabled">
+                <span>GitHub (Coming Soon)</span>
+                <span>→</span>
+            </a>
+
+            <p style="margin-top: 30px; font-style: italic; color: #63264A;"><strong>Status:</strong> This project is actively being developed. Documentation, code, and results will be published upon completion.</p>
+        </div>
+    </div>
+</body>
+</html>

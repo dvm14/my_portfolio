@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integration of AI into Raspberry Pi - Diya Mirji</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: #493548;
+            min-height: 100vh;
+            color: #CBEAA6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #A1E887;
+            text-decoration: none;
+            font-size: 16px;
+            margin-bottom: 40px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            transform: translateX(-5px);
+            color: #CBEAA6;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 600;
+            color: #A1E887;
+            margin-bottom: 50px;
+            line-height: 1.2;
+        }
+
+        .post-section {
+            margin-bottom: 60px;
+            padding-bottom: 60px;
+            border-bottom: 3px solid rgba(161, 232, 135, 0.3);
+        }
+
+        .post-section:last-child {
+            border-bottom: none;
+        }
+
+        .post-date {
+            font-size: 14px;
+            color: #80B192;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .post-title {
+            font-size: 32px;
+            font-weight: 600;
+            color: #A1E887;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .post-caption {
+            font-size: 18px;
+            font-style: italic;
+            color: #CBEAA6;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .post-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #6A8D92, #80B192);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            margin: 25px 0;
+        }
+
+        .post-description {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #CBEAA6;
+            margin-top: 20px;
+        }
+
+        .post-description p {
+            margin-bottom: 15px;
+        }
+
+        strong {
+            color: #A1E887;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            .post-title {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Portfolio</a>
+        
+        <h1>Integration of AI into Raspberry Pi</h1>
+
+        <article class="post-section">
+            <div class="post-date">Coming Soon</div>
+            <h2 class="post-title">Building a Real-Time Object Detection System</h2>
+            
+            <div class="post-image">📷 Camera Module Integration</div>
+
+            <div class="post-description">
+                <p>A practical guide to implementing real-time object detection on Raspberry Pi using the camera module. This post will cover model selection, optimization techniques, and how to achieve acceptable frame rates while maintaining detection accuracy.</p>
+
+                <p>We'll explore quantization techniques to reduce model size, compare different architectures optimized for edge deployment, and discuss real-world applications from wildlife monitoring to assistive technologies for people with visual impairments.</p>
+            </div>
+        </article>
+
+        <article class="post-section">
+            <div class="post-date">October 15, 2025</div>
+            <h2 class="post-title">Getting Started with Edge AI on Raspberry Pi</h2>
+            
+            <div class="post-image">🔧 Raspberry Pi AI Setup</div>
+
+            <div class="post-description">
+                <p>Exploring how to bring artificial intelligence to edge devices like the Raspberry Pi opens up exciting possibilities for creating intelligent physical products. Edge AI allows machine learning models to run directly on small, low-power devices rather than relying on cloud computing.</p>
+
+                <p>The Raspberry Pi, despite its compact size and limited resources, can run lightweight AI models for tasks like image classification, object detection, and even natural language processing. This makes it perfect for creating smart home devices, agricultural sensors, or assistive technologies that work without constant internet connectivity.</p>
+
+                <p>Key challenges include optimizing model size and inference speed for the Pi's ARM processor, managing memory constraints, and choosing the right frameworks (like TensorFlow Lite, ONNX Runtime, or PyTorch Mobile) that are designed for edge deployment. The trade-off between model accuracy and computational efficiency becomes crucial in this environment.</p>
+            </div>
+        </article>
+    </div>
+</body>
+</html>

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Under the Magnifying Glass - Diya Mirji</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: #F3F9D2;
+            min-height: 100vh;
+            color: #2d2d2d;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #3D0B37;
+            text-decoration: none;
+            font-size: 16px;
+            margin-bottom: 40px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            transform: translateX(-5px);
+            color: #63264A;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 600;
+            color: #3D0B37;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #4B4E6D;
+        }
+
+        .content-section {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid rgba(128, 177, 146, 0.3);
+        }
+
+        .content-section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 32px;
+            font-weight: 600;
+            color: #3D0B37;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #4B4E6D;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            line-height: 1.8;
+            color: #4B4E6D;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .tech-item {
+            background: linear-gradient(135deg, #80B192, #6A8D92);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .concept-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .concept-tag {
+            background: rgba(128, 177, 146, 0.2);
+            color: #3D0B37;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            border: 2px solid #80B192;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #6A8D92, #80B192);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            margin: 25px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .stat-card {
+            background: rgba(128, 177, 146, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #80B192;
+        }
+
+        .stat-card h4 {
+            color: #3D0B37;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #4B4E6D;
+        }
+
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #3D0B37;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            margin-right: 15px;
+        }
+
+        .github-link:hover {
+            background: #63264A;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(61, 11, 55, 0.3);
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+
+        li {
+            line-height: 1.8;
+            color: #4B4E6D;
+            margin-bottom: 10px;
+        }
+
+        strong {
+            color: #3D0B37;
+        }
+
+        .highlight-box {
+            background: rgba(161, 232, 135, 0.2);
+            border-left: 4px solid #80B192;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .column-section {
+            background: rgba(255, 255, 255, 0.5);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .column-section h4 {
+            color: #3D0B37;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Portfolio</a>
+        
+        <h1>Music Under the Magnifying Glass</h1>
+        
+        <div class="project-meta">
+            <div class="meta-item">📅 2024</div>
+            <div class="meta-item">👥 Team Project with Tiffany Degbotse</div>
+            <div class="meta-item">🎵 Data Storytelling</div>
+        </div>
+
+        <div class="content-section">
+            <h2>Key Concepts</h2>
+            <div class="concept-list">
+                <div class="concept-tag">Exploratory Data Analysis (EDA)</div>
+                <div class="concept-tag">Data Preprocessing</div>
+                <div class="concept-tag">Data Visualization</div>
+                <div class="concept-tag">Statistical Analysis</div>
+                <div class="concept-tag">Feature Engineering</div>
+                <div class="concept-tag">Data Storytelling</div>
+                <div class="concept-tag">Pandas & NumPy</div>
+                <div class="concept-tag">Critical Data Evaluation</div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Overview</h2>
+            <p>In this data storytelling project, we explored global music streaming trends and listener insights by diving into the listening activity of music fans around the world. Our central question: <strong>Is music streaming really global?</strong></p>
+            
+            <p>Using a dataset of approximately 5,000 user observations spanning from 2018 to 2024, we performed comprehensive exploratory data analysis and data preprocessing to uncover patterns in how people consume music across different countries, platforms, and genres. Through careful analysis and visualization, we told a compelling data-driven story about the state of music streaming worldwide.</p>
+
+            <div class="image-placeholder">🎵 Global Music Streaming Dashboard</div>
+        </div>
+
+        <div class="content-section">
+            <h2>The Dataset</h2>
+            <p>Our dataset represented user listening activity from 2018-2024, with each observation capturing a unique user and their streaming behavior. The dataset was remarkably clean with <strong>no missing values</strong> and contained both numerical and categorical features that painted a comprehensive picture of listening habits.</p>
+
+            <div class="two-column">
+                <div class="column-section">
+                    <h4>Numerical Features</h4>
+                    <ul>
+                        <li>Age (13-60 years old)</li>
+                        <li>Minutes Streamed Per Day (10-600 min)</li>
+                        <li>Number of Songs Liked (1-500 songs)</li>
+                        <li>Discovery Weekly Engagement (10-90%)</li>
+                        <li>Repeat Song Rate (5-80%)</li>
+                    </ul>
+                </div>
+                <div class="column-section">
+                    <h4>Categorical Features</h4>
+                    <ul>
+                        <li>Country (10 countries)</li>
+                        <li>Streaming Platform</li>
+                        <li>Top Genre</li>
+                        <li>Most Played Artist</li>
+                        <li>Subscription Type</li>
+                        <li>Listening Time</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="stats-grid" style="margin-top: 30px;">
+                <div class="stat-card">
+                    <h4>Countries Represented</h4>
+                    <div class="stat-value">10</div>
+                    <p>USA, UK, Canada, Brazil, Germany, France, Japan, South Korea, India, Australia</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Streaming Platforms</h4>
+                    <div class="stat-value">6</div>
+                    <p>Spotify, Apple Music, YouTube, Amazon Music, Tidal, Deezer</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Top Genres</h4>
+                    <div class="stat-value">10</div>
+                    <p>Pop, Hip-Hop, Rock, EDM, R&B, Jazz, Classical, Country, Metal, Reggae</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Featured Artists</h4>
+                    <div class="stat-value">10</div>
+                    <p>Taylor Swift, Drake, BTS, Billie Eilish, and more</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Methodology & Analysis</h2>
+            
+            <h3>Basic Data Analysis</h3>
+            <p>We began with fundamental statistical analysis to understand our data's distribution and characteristics. Our analysis revealed that for all numerical features, the mean and median (50th percentile) were nearly identical, indicating <strong>roughly symmetrical distributions</strong> with no significant skewness or kurtosis.</p>
+
+            <div class="image-placeholder">📊 Distribution Statistics Visualization</div>
+
+            <h3>Feature Engineering: Artist Country Mapping</h3>
+            <p>One of our key innovations was creating a new feature that mapped each user's "Most Played Artist" to the artist's country of origin. This allowed us to explore whether listeners predominantly consume music from their own country or embrace truly global content.</p>
+
+            <div class="highlight-box">
+                <h4 style="color: #3D0B37; margin-bottom: 10px;">Artist-Country Mapping</h4>
+                <ul style="margin: 0;">
+                    <li><strong>USA:</strong> Taylor Swift, Billie Eilish, Post Malone, The Weeknd</li>
+                    <li><strong>UK:</strong> Ed Sheeran, Dua Lipa, Adele</li>
+                    <li><strong>Canada:</strong> Drake</li>
+                    <li><strong>South Korea:</strong> BTS</li>
+                    <li><strong>Puerto Rico:</strong> Bad Bunny</li>
+                </ul>
+            </div>
+
+            <h3>Exploring Music by Country</h3>
+            <p>We investigated listening patterns by country to understand regional preferences and the global reach of different artists.</p>
+
+            <div class="image-placeholder">🌍 "Global" Music Listeners - Geographic Distribution</div>
+
+            <p><strong>Key Findings:</strong></p>
+            <ul>
+                <li><strong>Australia:</strong> Post Malone was the most played artist</li>
+                <li><strong>Brazil:</strong> Dua Lipa dominated listening activity</li>
+                <li><strong>Canada:</strong> Bad Bunny was surprisingly popular</li>
+                <li><strong>France:</strong> BTS led in plays</li>
+                <li><strong>Japan:</strong> BTS and Billie Eilish tied for top spot</li>
+                <li><strong>UK:</strong> Adele and Bad Bunny were equally popular</li>
+                <li><strong>USA:</strong> Bad Bunny was the most played</li>
+            </ul>
+
+            <div class="image-placeholder">🎤 Most Played Artist by Country Heatmap</div>
+
+            <p>We also analyzed which countries listened to each artist the most, revealing interesting patterns about artist popularity and cultural reach:</p>
+            <ul>
+                <li><strong>Adele:</strong> Most popular in UK</li>
+                <li><strong>BTS:</strong> France had the highest listener count</li>
+                <li><strong>Bad Bunny:</strong> UK led in plays</li>
+                <li><strong>Drake:</strong> India was the top country</li>
+                <li><strong>Post Malone, Taylor Swift, The Weeknd:</strong> All most popular in Australia</li>
+            </ul>
+
+            <h3>Exploring Top Genres</h3>
+            <p>We grouped our data by top genre to understand how genre preferences correlated with other features like country, listening behavior, and artist choices.</p>
+
+            <div class="image-placeholder">🎸 Numerical Features Grouped by Genre</div>
+
+            <p><strong>Notable Genre Insights:</strong></p>
+            <ul>
+                <li><strong>EDM listeners:</strong> Majority came from Germany</li>
+                <li><strong>Pop listeners:</strong> Surprisingly low representation from South Korea</li>
+                <li><strong>R&B and Hip-Hop listeners:</strong> Drake was notably NOT the most played artist for most listeners in these genres</li>
+                <li><strong>Pop genre favorites:</strong> Dua Lipa was the top artist, while Ed Sheeran ranked among the least played</li>
+            </ul>
+
+            <div class="image-placeholder">🎧 Categorical Features by Genre Analysis</div>
+        </div>
+
+        <div class="content-section">
+            <h2>Key Discoveries</h2>
+            
+            <div class="highlight-box">
+                <h3 style="margin-top: 0;">Was It Really Global?</h3>
+                <p>Our analysis led us to some thought-provoking conclusions about the "global" nature of music streaming:</p>
+                <ul style="margin-bottom: 0;">
+                    <li><strong>Limited Geographic Representation:</strong> With only 10 countries represented, the dataset cannot truly claim to represent global listening activity. Major regions like Africa, the Middle East, and much of Asia are absent.</li>
+                    
+                    <li><strong>Sample Bias:</strong> Only listeners from certain backgrounds were included in the sample, potentially skewing results toward specific demographics and listening patterns.</li>
+                    
+                    <li><strong>Suspicious Results:</strong> Some findings raised questions about data representativeness - for example, why would certain artists be overwhelmingly popular in unexpected countries?</li>
+                    
+                    <li><strong>Western-Centric Data:</strong> The majority of featured artists were from English-speaking countries, particularly the US and UK, suggesting the dataset may better represent Western streaming habits than truly global patterns.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>What I Learned</h2>
+            
+            <ul>
+                <li><strong>Critical Data Evaluation:</strong> Learned the importance of questioning data sources and being transparent about dataset limitations. Just because data claims to be "global" doesn't mean it truly represents worldwide patterns.</li>
+                
+                <li><strong>Feature Engineering Impact:</strong> Creating the artist-country mapping feature was crucial for uncovering deeper insights about music consumption patterns. Sometimes the most valuable features aren't in the original dataset.</li>
+                
+                <li><strong>Data Storytelling:</strong> Developed skills in crafting a narrative from data, guiding the audience through our findings in a logical and engaging way rather than just presenting statistics.</li>
+                
+                <li><strong>EDA Best Practices:</strong> Gained experience with systematic exploratory data analysis, from understanding distributions and checking for missing values to grouping data by different features to reveal patterns.</li>
+                
+                <li><strong>Visualization Design:</strong> Learned to choose appropriate visualizations for different types of insights, whether heatmaps for geographic patterns, distributions for numerical features, or grouped analyses for categorical relationships.</li>
+                
+                <li><strong>Statistical Interpretation:</strong> Understood how to interpret distribution statistics (mean, median, skewness) and what they reveal about data characteristics.</li>
+                
+                <li><strong>Collaboration:</strong> Working with a partner taught me how to divide analysis tasks, share insights, and combine our findings into a cohesive story.</li>
+                
+                <li><strong>Ethical Data Analysis:</strong> Recognized the responsibility to acknowledge dataset limitations and biases rather than presenting findings as absolute truths, especially when dealing with sensitive topics like cultural representation.</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>Technologies & Tools</h2>
+            <div class="tech-grid">
+                <div class="tech-item">Python</div>
+                <div class="tech-item">Pandas</div>
+                <div class="tech-item">NumPy</div>
+                <div class="tech-item">Matplotlib</div>
+                <div class="tech-item">Seaborn</div>
+                <div class="tech-item">Jupyter Notebook</div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Links & Resources</h2>
+            <a href="https://github.com/dvm14/spotify_magnified" class="github-link" target="_blank">
+                <span>View on GitHub</span>
+                <span>→</span>
+            </a>
+            <a href="#" class="github-link" target="_blank">
+                <span>View Presentation</span>
+                <span>→</span>
+            </a>
+
+            <p style="margin-top: 30px; font-style: italic; color: #63264A;"><strong>Team Members:</strong> Diya Mirji, Tiffany Degbotse</p>
+        </div>
+    </div>
+</body>
+</html>
