@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(180deg, #F3F9D2 0%, #CBEAA6 20%, #80B192 40%, #6A8D92 60%, #4B4E6D 80%, #493548 100%);
+            min-height: 100vh;
+            color: #2d2d2d;
+        }
+
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100vh;
+            width: 200px;
+            background: rgba(61, 11, 55, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 40px 20px;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            background: linear-gradient(135deg, #A1E887, #6A8D92);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: #CBEAA6;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            padding: 8px 0;
+            border-left: 3px solid transparent;
+            padding-left: 15px;
+        }
+
+        .nav-links a:hover {
+            color: #A1E887;
+            border-left-color: #A1E887;
+            transform: translateX(5px);
+        }
+
+        .main-content {
+            margin-left: 200px;
+            padding: 60px 80px;
+        }
+
+        section {
+            margin-bottom: 120px;
+            animation: fadeIn 0.8s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .intro-section {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            max-width: 800px;
+        }
+
+        h1 {
+            font-size: 56px;
+            font-weight: 500;
+            color: #3D0B37;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            color: #63264A;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .bio {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #4B4E6D;
+            max-width: 700px;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 30px;
+            border-radius: 12px;
+            backdrop-filter: blur(5px);
+        }
+
+        h2 {
+            font-size: 42px;
+            font-weight: 500;
+            color: #3D0B37;
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #80B192, #A1E887);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 30px rgba(61, 11, 55, 0.2);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #6A8D92, #80B192);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #3D0B37;
+            margin-bottom: 10px;
+        }
+
+        .project-description {
+            color: #4B4E6D;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        .learnings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .learning-card {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 16px;
+            padding: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            border-left: 4px solid transparent;
+        }
+
+        .learning-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 30px rgba(61, 11, 55, 0.2);
+            border-left-color: #80B192;
+        }
+
+        .learning-date {
+            font-size: 13px;
+            color: #63264A;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: none;
+        }
+
+        .learning-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #3D0B37;
+            margin-bottom: 15px;
+        }
+
+        .learning-excerpt {
+            color: #4B4E6D;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 20px;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 32px;
+            }
+
+            .projects-grid, .learnings-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="logo">DM</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#learnings">Cool Learnings</a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section id="about" class="intro-section">
+            <h1>Diya Mirji</h1>
+            <div class="contact-info">
+                <div class="contact-item">📧 diya.mirji@duke.edu</div>
+                <div class="contact-item">📱 (408) 401-0426</div>
+            </div>
+            <div class="bio">
+                <p>Hi! I'm an <strong>AI/ML Engineer</strong> pursuing my MEng in <strong>AI and Product Innovation at Duke University</strong>, where I study modeling algorithms, data processing, and AI in the physical world.</p>
+                <p style="margin-top: 15px;">Currently, I'm exploring object detection in images and diving into explainability in AI to make models more transparent and trustworthy. I'm also integrating AI with Raspberry Pi to bring intelligence to edge devices. As Vice President of Duke's AI Competition Club, I host the university's annual AI hackathon and provide a space for students to bring their ideas to life.</p>
+                <p style="margin-top: 15px;">Before Duke, I worked as a <strong>Software Engineer at Cisco</strong>, building network security solutions for next-generation firewalls.</p>
+                <p style="margin-top: 15px;">I'm passionate about making physical products that help people and give back to under-resourced communities, <strong>making people's lives better instead of easier</strong>.</p>
+                <p style="margin-top: 15px;">When I'm not training models or writing code, you can find me watching fun movies, trying new beers and restaurants, traveling to new places, or playing pool with friends :)</p>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <a href="project-weather-prediction.html" class="project-card">
+                    <div class="project-image">🌡️</div>
+                    <div class="project-content">
+                        <div class="project-title">Predicting Weather Patterns</div>
+                        <div class="project-description">[In Progress] Using time series modeling to predict hourly temperature in Raleigh from September 17-30, 2025 through extensive data processing and feature engineering.</div>
+                    </div>
+                </a>
+
+                <a href="project-music-storytelling.html" class="project-card">
+                    <div class="project-image">🎵</div>
+                    <div class="project-content">
+                        <div class="project-title">Music Under the Magnifying Glass</div>
+                        <div class="project-description">Diving into the activity of music listeners around the world by performing exploratory data analysis and preprocessing to tell a compelling data-driven story about global streaming trends.</div>
+                    </div>
+                </a>
+
+                <a href="project-radiation-classification.html" class="project-card">
+                    <div class="project-image">🔬</div>
+                    <div class="project-content">
+                        <div class="project-title">Multi-label Classification of Radiation Type</div>
+                        <div class="project-description">Engineering machine learning models capable of analyzing patterns in mice cell images with DNA damage and classifying them by particle type or both particle type and dosage for NASA astronaut safety research.</div>
+                    </div>
+                </a>
+
+                <a href="project-detail.html?id=4" class="project-card">
+                    <div class="project-image">💡</div>
+                    <div class="project-content">
+                        <div class="project-title">More Projects Coming Soon</div>
+                        <div class="project-description">Additional projects and case studies will be added here. Stay tuned!</div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section id="learnings">
+            <h2>Cool Learnings</h2>
+            <div class="learnings-grid">
+                <a href="learning-explainable-ai.html" class="learning-card">
+                    <div class="learning-title">Explainable AI</div>
+                    <div class="learning-excerpt">Exploring XAI techniques for climate hazard prediction using SHAP analysis to make AI models more interpretable and trustworthy. Understanding how to build transparent AI systems that stakeholders can understand and act upon.</div>
+                </a>
+
+                <a href="learning-raspberry-pi.html" class="learning-card">
+                    <div class="learning-title">Integration of AI into Raspberry Pi</div>
+                    <div class="learning-excerpt">Bringing artificial intelligence to edge devices and creating intelligent physical products. Exploring optimization techniques, model deployment, and real-world applications of AI on resource-constrained hardware.</div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add active state to nav links based on scroll position
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.style.color = '#CBEAA6';
+                link.style.borderLeftColor = 'transparent';
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.style.color = '#A1E887';
+                    link.style.borderLeftColor = '#A1E887';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
